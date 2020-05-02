@@ -1,0 +1,35 @@
+<div class="form-horizontal">
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Id</label>
+    <div class="col-sm-5">
+      <input class="form-control" type="text" [(ngModel)]="student._id" />
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">name</label>
+    <div class="col-sm-5">
+      <input class="form-control" type="text" [(ngModel)]="student.Name" />
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-2 control-label">email</label>
+    <div class="col-sm-5">
+      <input type="text" class="form-control" [(ngModel)]="student.Email" />
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">department</label>
+    <div class="col-sm-5">
+      <select class="custom-select custom-select-lg mb-3" [(ngModel)]="student.Department">
+        <option *ngFor="let dep of deps" [ngValue]="dep._id">{{dep.Name}}</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-5">
+      <button class="btn btn-primary" (click)="onaddSaved()">Save</button>
+    </div>
+  </div>
+
+</div>

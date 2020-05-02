@@ -1,0 +1,30 @@
+<div class="container">
+  <a routerLink="/department/add" class="btn btn-outline-dark">
+    add department
+  </a>
+  <table class="table table-bordered table-hover">
+    <thead class="thead-inverse">
+      <tr>
+        <th>id</th>
+        <th>name</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let dep of Departments; let i = index">
+      <tr>
+        <td scope="row">{{ dep._id }}</td>
+        <td>{{ dep.Name }}</td>
+        <td>
+          <button class="btn btn-warning" (click)="onDelete(dep._id)">delete</button>
+        </td>
+        <td>
+          <a routerLink="/department/edit/{{dep._id}}" class="btn btn-secondary">edit</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<router-outlet></router-outlet>

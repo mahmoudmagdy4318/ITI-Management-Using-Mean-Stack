@@ -1,0 +1,32 @@
+<div class="panel panel-danger">
+  <div class="panel-heading">
+    <h3 class="panel-title">Student Details</h3>
+  </div>
+  <div class="panel-body">
+    <table class="table">
+      <thead>
+        <tr class="bg-secondary">
+          <th>id</th>
+          <th>name</th>
+          <th>age</th>
+          <th>department</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ student._id }}</td>
+          <td>{{ student.Name }}</td>
+          <td>{{ student.Email }}</td>
+          <td *ngIf="student.Department; else emptyDep">{{ student.Department.Name}}</td>
+          <ng-template #emptyDep>
+            <td>...</td>
+          </ng-template>
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="panel-footer">
+    <a routerLink="/student" class="btn btn-warning">Close</a>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<div class="container">
+  <a routerLink="/student/add" class="btn btn-outline-dark">
+    add student
+  </a>
+  <table class="table table-bordered table-hover">
+    <thead class="thead-inverse">
+      <tr>
+        <th>#</th>
+        <th>id</th>
+        <th>name</th>
+        <th>email</th>
+        <th>Department</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let std of students; let i = index">
+      <tr>
+        <td>{{ i + 1 }}</td>
+        <td scope="row">{{ std._id }}</td>
+        <td>{{ std.Name | uppercase }}</td>
+        <td>{{ std.Email }}</td>
+        <td *ngIf="std.Department; else emptyDep">{{ std.Department.Name }}</td>
+        <ng-template #emptyDep>
+          <td>...</td>
+        </ng-template>
+
+        <td>
+          <button class="btn btn-warning" (click)="onDelete(std._id)">delete</button>
+        </td>
+        <td>
+          <a routerLink="/student/details/{{std._id}}" class="btn btn-primary">
+            show more
+          </a>
+        </td>
+        <td>
+          <a routerLink="/student/edit/{{std._id}}" class="btn btn-secondary">edit</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<router-outlet></router-outlet>

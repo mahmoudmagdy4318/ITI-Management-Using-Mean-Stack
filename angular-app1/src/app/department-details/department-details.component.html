@@ -1,0 +1,24 @@
+<div class="panel panel-danger">
+  <div class="panel-heading">
+    <h3 class="panel-title">Department Details</h3>
+  </div>
+  <div class="panel-body">
+    <table class="table">
+      <thead>
+        <tr class="bg-secondary">
+          <th>id</th>
+          <th>name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ department._id }}</td>
+          <td>{{ department.Name }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="panel-footer">
+    <button class="btn btn-warning" (click)="onCloseDetails()">Close</button>
+  </div>
+</div>
